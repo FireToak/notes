@@ -1,0 +1,49 @@
+# Note utilisation de git avec GitLab
+
+1. Configuration de git dans le projet
+```
+git init
+git add .
+```
+Note : voir ma procédure pour plus d'information
+
+2. Création d'un commit pour appliquer les mises à jours en local au repertoire git
+```
+git commit -m "Création du projet"
+```
+
+3. Création de la clé SSH (Voir la procédure)
+
+2. Ajout de la clé dans les paramètres utilisateur
+> Preferences > SSH Keys
+
+3. Configuration du fichier de config SSH :
+```
+Host gitlab.loutik.lab
+  HostName gitlab.loutik.lab
+  User git
+  IdentityFile ~/.ssh/gitlab-loutik
+  IdentitiesOnly yes
+```
+
+4. Test de la configuration SSH :
+```
+ssh -T git@gitlab.loutik.lab
+```
+T => Va fermer le terminal après avoir faire la requetes
+
+5. Si votre dépo à un fichier comme README.md vous devriez le récuperer sur votre repo local avec la commande :
+```
+git pull origin main
+```
+Si vous avez une erreur : 
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'http://gitlab.loutik.lab/root/eliott-website.git'
+```
+git pull origin main --allow-unrelated-histories
+```
+
+6. Envoyer le code vers le gitlab
+```
+git push origin main
+```
