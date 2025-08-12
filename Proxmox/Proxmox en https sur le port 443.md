@@ -1,4 +1,4 @@
-# Rendre l'interface de Proxmox accessible depuis https
+# Rendre l'interface de Proxmox accessible depuis le port 443 (sans le port 8006)
 
 1. Configuration de iptables
 ```
@@ -96,3 +96,4 @@ To                         Action      From
 
 
  
+
