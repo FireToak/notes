@@ -51,49 +51,9 @@ COMMIT
 # Completed on Tue Aug 12 23:19:30 2025
 ```
 
-4. Installer UFW pour ouvrir le port 443
-```
-apt install ufw -y
-```
-
-5. Autoriser les ports :
-```
-ufw allow 443/tcp
-ufw allow 22/tcp
-ufw allow 8006/tcp
-```
-
-⚠️ **Important : quand vous activez UFW ils bloquent tous les ports, donc si vous n'avez pas ouvert le port SSH vous perdez l'accès à votre machine**
-
-7. Activer ufw
-```
-ufw enable
-```
-
-6. Vérifier les ports 
-```
-sudo ufw status verbose
-```
-
-Exemple de sortie :
-```
-Status: active
-Logging: on (low)
-Default: deny (incoming), allow (outgoing), disabled (routed)
-New profiles: skip
-
-To                         Action      From
---                         ------      ----
-443/tcp                    ALLOW IN    Anywhere
-22/tcp                     ALLOW IN    Anywhere
-8006/tcp                   ALLOW IN    Anywhere
-443/tcp (v6)               ALLOW IN    Anywhere (v6)
-22/tcp (v6)                ALLOW IN    Anywhere (v6)
-8006/tcp (v6)              ALLOW IN    Anywhere (v6)
-```
-
-7. Plus qu'à tester en accédants à l'adresse du Proxmox (en https).
+4. Plus qu'à tester en accédants à l'adresse du Proxmox (en https).
 
 
  
+
 
